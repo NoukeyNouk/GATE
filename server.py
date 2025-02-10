@@ -53,7 +53,7 @@ def check_info(data):
         return False
 
     hex_part = data[0]
-    if not (hex_part.startswith('0x') and all(c in hex_alp for c in hex_part[2:])):
+    if not (all(c in hex_alp for c in hex_part[2:])):
         return False
 
     return True
