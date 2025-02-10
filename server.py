@@ -81,6 +81,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         if not data:
                             break
                         data = data.decode('utf-8').strip().lower()
+                        if not ')' in data:
+                            data = f'({data} enter)'
                         response = b'FALSE'
 
                         if check_info(data):
